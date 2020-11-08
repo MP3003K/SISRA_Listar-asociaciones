@@ -1,64 +1,46 @@
-<table mat-table [dataSource]="asociaciones" class="mat-elevation-z8">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="ID_ASOCIACION">
-        <th mat-header-cell *matHeaderCellDef> ID</th>
-        <td mat-cell *matCellDef="let element"> {{element.ID_ASOCIACION}} </td>
-    </ng-container>
-
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="NOMBRE_ASOCIACION">
-        <th mat-header-cell *matHeaderCellDef> Asociacion </th>
-        <td mat-cell *matCellDef="let element"> {{element.NOMBRE_ASOCIACION}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="IMFORMACION_ADICIONAL">
-        <th mat-header-cell *matHeaderCellDef> Imf. adicional </th>
-        <td mat-cell *matCellDef="let element"> {{element.IMFORMACION_ADICIONAL}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="DENOMINACION_ID_DENOMINACION">
-        <th mat-header-cell *matHeaderCellDef> Denominacion </th>
-        <td mat-cell *matCellDef="let element"> {{element.DENOMINACION_ID_DENOMINACION}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="NUMERO_MIENBROS">
-        <th mat-header-cell *matHeaderCellDef> N° mien. </th>
-        <td mat-cell *matCellDef="let element"> {{element.NUMERO_MIENBROS}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="UBICACION_ID_UBI_HIJO">
-        <th mat-header-cell *matHeaderCellDef>Ubicacion </th>
-        <td mat-cell *matCellDef="let element"> {{element.UBICACION_ID_UBI_HIJO}} </td>
-    </ng-container>
-
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="FECHA_CONSTITUCION">
-        <th mat-header-cell *matHeaderCellDef> Fecha de Registro </th>
-        <td mat-cell *matCellDef="let element"> {{element.FECHA_CONSTITUCION}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="JUNTA_VECINAL_ID_JD">
-        <th mat-header-cell *matHeaderCellDef> ID_Casa_Vecinal </th>
-        <td mat-cell *matCellDef="let element"> {{element.JUNTA_VECINAL_ID_JD}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="ID_SOLICITANTE">
-        <th mat-header-cell *matHeaderCellDef> ID_solicitate </th>
-        <td mat-cell *matCellDef="let element"> {{element.ID_SOLICITANTE}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="center">
+    <button mat-icon-button>    
+      <a mat-icon-button routerLink="/asociacion/add">
+        <mat-icon  class="add" color="accent">add_circle</mat-icon>
+      </a>
+    </button>
+  </div>
+  <nav class="center">
+    <table mat-table [dataSource]="asociaciones" class="mat-elevation-z8">
+      <ng-container matColumnDef="ID_ASOCIACION">
+        <th mat-header-cell *matHeaderCellDef>ID     </th>
+        <td mat-cell *matCellDef="let asociacion"> {{asociacion.ID_ASOCIACION}} </td>
+      </ng-container>
+      <ng-container matColumnDef="NOMBRE_ASOCIACION">
+        <th mat-header-cell *matHeaderCellDef>ASOCIACION</th>
+        <td mat-cell *matCellDef="let asociacion"> {{asociacion.NOMBRE_ASOCIACION}} </td>
+      </ng-container>
+      <ng-container matColumnDef="IMFORMACION_ADICIONAL">
+        <th mat-header-cell *matHeaderCellDef>IMFORMACION</th>
+        <td mat-cell *matCellDef="let asociacion"> {{asociacion.IMFORMACION_ADICIONAL}} </td>
+      </ng-container>
+      <ng-container matColumnDef="DENOMINACION_ID_DENOMINACION">
+        <th mat-header-cell *matHeaderCellDef>DENOMINACION</th>
+        <td mat-cell *matCellDef="let asociacion"> {{asociacion.DENOMINACION_ID_DENOMINACION}} </td>
+      </ng-container>
+      <ng-container matColumnDef="EDITAR">
+        <th mat-header-cell *matHeaderCellDef>Editar</th>
+        <td mat-cell *matCellDef="let asociacion">
+          <a mat-icon-button [routerLink]="['/editar', asociacion.ID_ASOCIACION]">
+            <mat-icon color="primary">edit</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="ELIMINAR">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let asociacion">
+          <button (click)="delAsociacion(asociacion.ID_ASOCIACION)" mat-icon-button>
+            <mat-icon color="warn">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['ID_ASOCIACION','NOMBRE_ASOCIACION','IMFORMACION_ADICIONAL','DENOMINACION_ID_DENOMINACION']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['ID_ASOCIACION','NOMBRE_ASOCIACION','IMFORMACION_ADICIONAL','DENOMINACION_ID_DENOMINACION'];"></tr>  
+    </table>
+  </nav>
+   

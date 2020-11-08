@@ -12,10 +12,23 @@ import{HttpClient, HttpHeaders, HttpRequest, HttpEvent} from '@angular/common/ht
 export class AsociacionService {
 
     private  HttpHeaders = new HttpHeaders({'Content-Type':'application/json'});
-    private asociacionUrl:string = '/asociaciones/all';
+    private asociacionUrl:string = 'http://localhost:8080/asociaciones';
     constructor(private  http : HttpClient) { }
-    getAsociacion() : Observable<Asociacion[]>{
-      return this.http.get<Asociacion[]>(this.asociacionUrl);
-    
+  getAsociaciones():Observable<Asociacion[]>{
+    return this.http.get<Asociacion[]>(this.asociacionUrl+'/all');
+  }
+  getAsociacion(id:number):Observable<Asociacion[]> {
+    return this.http.get<Asociacion[]>(this.asociacionUrl+'/'+id);
+  }
+  addAsociacion(asociacion: Asociacion): Observable<number>{
+    return this.http.post<number>(this.asociacionUrl+"/add", asociacion, {headers:this.HttpHeaders});
+  }
+
+  deleteAsociacion(asociacion: Asociacion) {
+    return this.http.delete(this.asociacionUrl+'/delete/'+asociacion.ID_ASOCIACION);
+  }
+
+  updateAsociacion(asociacion: Asociacion) {
+    return this.http.put(`${this.asociacionUrl}/update/`,asociacion);
   }
 }
