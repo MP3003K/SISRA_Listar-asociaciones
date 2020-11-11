@@ -19,9 +19,9 @@
         <th mat-header-cell *matHeaderCellDef>IMFORMACION</th>
         <td mat-cell *matCellDef="let asociacion"> {{asociacion.IMFORMACION_ADICIONAL}} </td>
       </ng-container>
-      <ng-container matColumnDef="DENOMINACION_ID_DENOMINACION">
-        <th mat-header-cell *matHeaderCellDef>DENOMINACION</th>
-        <td mat-cell *matCellDef="let asociacion"> {{asociacion.DENOMINACION_ID_DENOMINACION}} </td>
+      <ng-container matColumnDef="ESTADO">
+        <th mat-header-cell *matHeaderCellDef>ESTADO</th>
+        <td mat-cell *matCellDef="let asociacion"> {{asociacion.ESTADO}} </td>
       </ng-container>
       <ng-container matColumnDef="EDITAR">
         <th mat-header-cell *matHeaderCellDef>Editar</th>
@@ -34,13 +34,13 @@
       <ng-container matColumnDef="ELIMINAR">
         <th mat-header-cell *matHeaderCellDef>Eliminar</th>
         <td mat-cell *matCellDef="let asociacion">
-          <button (click)="delAsociacion(asociacion.ID_ASOCIACION)" mat-icon-button>
+          <button (click)="delLogica(asociacion.ID_ASOCIACION)" mat-icon-button>
             <mat-icon color="warn">delete</mat-icon>
           </button>
         </td>
       </ng-container>
-      <tr mat-header-row *matHeaderRowDef="['ID_ASOCIACION','NOMBRE_ASOCIACION','IMFORMACION_ADICIONAL','DENOMINACION_ID_DENOMINACION']"></tr>
-      <tr mat-row *matRowDef="let row; columns: ['ID_ASOCIACION','NOMBRE_ASOCIACION','IMFORMACION_ADICIONAL','DENOMINACION_ID_DENOMINACION'];"></tr>  
+      <tr mat-header-row *matHeaderRowDef="['ID_ASOCIACION','NOMBRE_ASOCIACION','IMFORMACION_ADICIONAL','ESTADO','EDITAR','ELIMINAR']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['ID_ASOCIACION','NOMBRE_ASOCIACION','IMFORMACION_ADICIONAL','ESTADO','EDITAR','ELIMINAR'];"></tr>  
     </table>
   </nav>
    

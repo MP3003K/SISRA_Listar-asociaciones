@@ -8,4 +8,5 @@ export class Asociacion {
     FECHA_CONSTITUCION:string;
     JUNTA_VECINAL_ID_JD:number;
     ID_SOLICITANTE:number;
+    ESTADO: string;
 }

@@ -16,6 +16,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -26,16 +31,22 @@ import {MatCardModule} from '@angular/material/card';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatInputModule,
-    MatIconModule,
     MatButtonModule,
+    MatIconModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    LayoutModule
   ],
   providers: [
     AsociacionService
