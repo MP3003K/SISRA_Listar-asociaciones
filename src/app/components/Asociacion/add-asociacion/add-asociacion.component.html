@@ -7,47 +7,69 @@
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
+            
             <mat-form-field appearance="outline">
                 <mat-label>NOMBRE_ASOCIACION</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.NOMBRE_ASOCIACION" placeholder="Ingresar NOMBRE_ASOCIACION" name="NOMBRE_ASOCIACION">
+                <input matInput [(ngModel)]="asociacionModel.nombre_asociacion" placeholder="Ingresar NOMBRE_ASOCIACION"
+                    name="NOMBRE_ASOCIACION">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>FECHA_CONSTITUCION</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.FECHA_CONSTITUCION" placeholder="Ingresar FECHA_CONSTITUCION" name="FECHA_CONSTITUCION">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
+
+
             <mat-form-field appearance="outline">
                 <mat-label>IMFORMACION_ADICIONAL</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.IMFORMACION_ADICIONAL" placeholder="Ingresar IMFORMACION_ADICIONAL" name="IMFORMACION_ADICIONAL">
+                <input matInput [(ngModel)]="asociacionModel.imformacion_adicional"
+                    placeholder="Ingresar IMFORMACION_ADICIONAL" name="IMFORMACION_ADICIONAL">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>JUNTA_VECINAL_ID_JD</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.JUNTA_VECINAL_ID_JD" placeholder="Ingresar JUNTA_VECINAL_ID_JD" name="JUNTA_VECINAL_ID_JD">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>NUMERO_MIENBROS</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.NUMERO_MIENBROS" placeholder="Ingresar NUMERO_MIENBROS" name="NUMERO_MIENBROS">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>UBICACION_ID_UBI_HIJO</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.UBICACION_ID_UBI_HIJO" placeholder="Ingresar UBICACION_ID_UBI_HIJO" name="UBICACION_ID_UBI_HIJO">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>ID_SOLICITANTE</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.ID_SOLICITANTE" placeholder="Ingresar " name="ID_SOLICITANTE">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
+
+
             <mat-form-field appearance="outline">
                 <mat-label>DENOMINACION_ID_DENOMINACION</mat-label>
-                <input matInput [(ngModel)]="asociacionModel.DENOMINACION_ID_DENOMINACION" placeholder="Ingresar DENOMINACION_ID_DENOMINACION" name="DENOMINACION_ID_DENOMINACION">
+                <input matInput [(ngModel)]="asociacionModel.denominacion_id_denominacion"
+                    placeholder="Ingresar DENOMINACION_ID_DENOMINACION" name="DENOMINACION_ID_DENOMINACION">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>NUMERO_MIENBROS</mat-label>
+                <input matInput [(ngModel)]="asociacionModel.numero_mienbros" placeholder="Ingresar NUMERO_MIENBROS"
+                    name="NUMERO_MIENBROS">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>UBICACION_ID_UBI_HIJO</mat-label>
+                <input matInput [(ngModel)]="asociacionModel.ubicacion_id_ubi_hijo"
+                    placeholder="Ingresar UBICACION_ID_UBI_HIJO" name="UBICACION_ID_UBI_HIJO">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>FECHA_CONSTITUCION</mat-label>
+                <input matInput [(ngModel)]="asociacionModel.fecha_constitucion" placeholder="Ingresar FECHA_CONSTITUCION"
+                    name="FECHA_CONSTITUCION">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>JUNTA_VECINAL_ID_JD</mat-label>
+                <input matInput [(ngModel)]="asociacionModel.junta_vecinal_id_jd" placeholder="Ingresar JUNTA_VECINAL_ID_JD"
+                    name="JUNTA_VECINAL_ID_JD">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>ID_SOLICITANTE</mat-label>
+                <input matInput [(ngModel)]="asociacionModel.id_solicitante" placeholder="Ingresar " name="ID_SOLICITANTE">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
         </mat-card-content>
+           
         <mat-card-actions>
             <button mat-raised-button color="primary" (click)="create()">Registrar</button>
             <a mat-raised-button routerLink="/listar" color="warn">Cancelar</a>

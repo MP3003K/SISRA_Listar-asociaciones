@@ -12,8 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AddAsociacionComponent implements OnInit {
   asociacionModel:Asociacion = new Asociacion();
-  constructor(private asociacionService:AsociacionService,
-    private router: Router, private activatedRoute:ActivatedRoute) { }
+  constructor(private asociacionService:AsociacionService,private router: Router, private activatedRoute:ActivatedRoute) { }
  
 
   
@@ -24,9 +23,8 @@ export class AddAsociacionComponent implements OnInit {
   public create():void{       
     this.asociacionService.addAsociacion(this.asociacionModel).subscribe(        
       response=>{
-        this.router.navigate(['/listar'])
-      swal.fire('Nuevo Asociacion', `Asociacion ${this.asociacionModel.DENOMINACION_ID_DENOMINACION,this.asociacionModel.FECHA_CONSTITUCION,this.asociacionModel.ID_SOLICITANTE,this.asociacionModel.IMFORMACION_ADICIONAL,this.asociacionModel.JUNTA_VECINAL_ID_JD,this.asociacionModel.NOMBRE_ASOCIACION,this.asociacionModel.NUMERO_MIENBROS,this.asociacionModel.UBICACION_ID_UBI_HIJO} creado con exito`,"success")      
-    })
-   
-}
+      swal.fire('Nuevo Asociacion', `Asociacion ${this.asociacionModel.nombre_asociacion,this.asociacionModel.imformacion_adicional,this.asociacionModel.denominacion_id_denominacion,this.asociacionModel.numero_mienbros,this.asociacionModel.ubicacion_id_ubi_hijo ,this.asociacionModel.fecha_constitucion,this.asociacionModel.junta_vecinal_id_jd,this.asociacionModel.id_solicitante} creado con exito`,"success")})  
+      this.router.navigate(['/listar'])
+
+    }
 }

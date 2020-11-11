@@ -24,16 +24,17 @@ export class UpdateAsociacionComponent implements OnInit {
       if (id) {
         this.asociacionService.getAsociacion(id).subscribe(
           (data) => {
+            
             this.asociaciones = data['cursor_asociacion']
-            this.asociacion.ID_ASOCIACION = this.asociaciones[0].ID_ASOCIACION;
-            this.asociacion.NOMBRE_ASOCIACION = this.asociaciones[0].NOMBRE_ASOCIACION;
-            this.asociacion.IMFORMACION_ADICIONAL = this.asociaciones[0].IMFORMACION_ADICIONAL;
-            this.asociacion.DENOMINACION_ID_DENOMINACION = this.asociaciones[0].DENOMINACION_ID_DENOMINACION;
-            this.asociacion.NUMERO_MIENBROS = this.asociaciones[0].NUMERO_MIENBROS;
-            this.asociacion.UBICACION_ID_UBI_HIJO = this.asociaciones[0].UBICACION_ID_UBI_HIJO;
-            this.asociacion.FECHA_CONSTITUCION = this.asociaciones[0].FECHA_CONSTITUCION;
-            this.asociacion.JUNTA_VECINAL_ID_JD = this.asociaciones[0].ID_JUNTA_VECINAL_ID_JDOL;
-            this.asociacion.ID_SOLICITANTE = this.asociaciones[0].ID_SOLICITANTE;
+            this.asociacion.id_asociacion = this.asociaciones[0].ID_ASOCIACION;
+            this.asociacion.nombre_asociacion = this.asociaciones[0].NOMBRE_ASOCIACION;
+            this.asociacion.imformacion_adicional = this.asociaciones[0].IMFORMACION_ADICIONAL;
+            this.asociacion.denominacion_id_denominacion = this.asociaciones[0].DENOMINACION_ID_DENOMINACION;
+            this.asociacion.numero_mienbros = this.asociaciones[0].NUMERO_MIENBROS;
+            this.asociacion.ubicacion_id_ubi_hijo = this.asociaciones[0].UBICACION_ID_UBI_HIJO;
+            this.asociacion.fecha_constitucion = this.asociaciones[0].FECHA_CONSTITUCION;
+            this.asociacion.junta_vecinal_id_jd = this.asociaciones[0].JUNTA_VECINAL_ID_JD;
+            this.asociacion.id_solicitante = this.asociaciones[0].ID_SOLICITANTE;
 
 
           })
@@ -41,6 +42,7 @@ export class UpdateAsociacionComponent implements OnInit {
     })
   }
   modificarAsociacion(): void {
+   console.log(this.asociacion);
     this.asociacionService.updateAsociacion(this.asociacion).subscribe(
       response => {
         swal.fire({
